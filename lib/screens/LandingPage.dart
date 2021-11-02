@@ -98,30 +98,31 @@ class RealEstateItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeDate = Theme.of(context);
     return Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
         child: Column(
-      children: [
-        Stack(children: [
-          ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
-          Positioned(
-              top: 15,
-              right: 15,
-              child: BorderIcon(
-                  width: 50,
-                  height: 50,
-                  child: Icon(
-                    Icons.favorite_border,
-                    color: COLOR_BLACK,
-                  )))
-        ]),
-        addVerticalSpace(15),
-        Row(
           children: [
-            Text("${formatcurrency(itemData['amount'])}", style: themeDate.textTheme.headline1),
-            addHorizontalSpace(10),
-            Text("${itemData['address']}", style: themeDate.textTheme.bodyText2)
+            Stack(children: [
+              ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
+              Positioned(
+                  top: 15,
+                  right: 15,
+                  child: BorderIcon(
+                      width: 50,
+                      height: 50,
+                      child: Icon(
+                        Icons.favorite_border,
+                        color: COLOR_BLACK,
+                      )))
+            ]),
+            addVerticalSpace(15),
+            Row(
+              children: [
+                Text("${formatcurrency(itemData['amount'])}", style: themeDate.textTheme.headline1),
+                addHorizontalSpace(10),
+                Text("${itemData['address']}", style: themeDate.textTheme.bodyText2)
+              ],
+            )
           ],
-        )
-      ],
-    ));
+        ));
   }
 }
