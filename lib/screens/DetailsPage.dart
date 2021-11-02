@@ -21,7 +21,6 @@ class DetailsPage extends StatelessWidget {
               width: size.width,
               height: size.height,
               child: SingleChildScrollView(
-                reverse: true,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
