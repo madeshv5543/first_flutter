@@ -71,8 +71,6 @@ class LandingPage extends StatelessWidget {
                 ],
               ),
               Positioned(
-                bottom: 20,
-                width: size.width,
                 child: Center(
                   child: OptionButton(icon: Icons.map_rounded, width: size.width * 0.35, text: "Map View"),
                 ),
