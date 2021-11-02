@@ -100,6 +100,7 @@ class RealEstateItem extends StatelessWidget {
     return Container(
         margin: EdgeInsets.symmetric(vertical: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(children: [
               ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
