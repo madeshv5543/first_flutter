@@ -38,7 +38,7 @@ class LandingPage extends StatelessWidget {
                 padding: sidePadding,
                 child: Text('San Francisco', style: themeData.textTheme.headline1),
               ),
-              Padding(padding: sidePadding, child: Divider(height: 50, color: Colors.black)),
+              Padding(padding: sidePadding, child: Divider(height: padding, color: COLOR_GREY)),
               SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
