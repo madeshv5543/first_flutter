@@ -104,6 +104,7 @@ class DetailsPage extends StatelessWidget {
                   ),
                   Positioned(
                       bottom: 20,
+                      width: size.width,
                       child: Row(
                         children: [
                           OptionButton(
