@@ -60,6 +60,10 @@ class DetailsPage extends StatelessWidget {
                             addVerticalSpace(5),
                             Text("${itemData['address']}", style: themeData.textTheme.bodyText2)
                           ],
+                        ),
+                        BorderIcon(
+                          child: Text("20 hours ago", style: themeData.textTheme.headline5),
+                          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                         )
                       ],
                     ),
