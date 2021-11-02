@@ -88,10 +88,13 @@ class DetailsPage extends StatelessWidget {
                           ],
                         )),
                     addVerticalSpace(padding),
-                    Text(
-                      "${itemData['description']}",
-                      textAlign: TextAlign.justify,
-                      style: themeData.textTheme.bodyText2,
+                    Padding(
+                      padding: sidePadding,
+                      child: Text(
+                        "${itemData['description']}",
+                        textAlign: TextAlign.justify,
+                        style: themeData.textTheme.bodyText2,
+                      ),
                     )
                   ],
                 ),
