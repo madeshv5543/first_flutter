@@ -121,7 +121,9 @@ class RealEstateItem extends StatelessWidget {
                 addHorizontalSpace(10),
                 Text("${itemData['address']}", style: themeDate.textTheme.bodyText2)
               ],
-            )
+            ),
+            addVerticalSpace(10),
+            Text("${itemData['bedrooms']} bedrooms / ${itemData['bathrooms']} bathrooms / ${itemData['area']} sqft ")
           ],
         ));
   }
