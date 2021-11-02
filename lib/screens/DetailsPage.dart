@@ -106,6 +106,7 @@ class DetailsPage extends StatelessWidget {
                       bottom: 20,
                       width: size.width,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           OptionButton(
                             width: size.width * 0.35,
