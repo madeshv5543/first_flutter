@@ -85,7 +85,13 @@ class DetailsPage extends StatelessWidget {
                           InformationTitle(content: "${itemData['bedrooms']}", name: 'bedrooms'),
                           InformationTitle(content: "${itemData['garage']}", name: 'Garage')
                         ],
-                      ))
+                      )),
+                  addVerticalSpace(padding),
+                  Text(
+                    "${itemData['description']}",
+                    textAlign: TextAlign.justify,
+                    style: themeData.textTheme.bodyText2,
+                  )
                 ],
               ),
             )));
