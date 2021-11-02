@@ -54,11 +54,14 @@ class LandingPage extends StatelessWidget {
                   )),
               addVerticalSpace(10),
               Expanded(
-                child: ListView.builder(
-                  itemCount: RE_DATA.length,
-                  itemBuilder: (context, index) {
-                    return Text("Item");
-                  },
+                child: Padding(
+                  padding: sidePadding,
+                  child: ListView.builder(
+                    itemCount: RE_DATA.length,
+                    itemBuilder: (context, index) {
+                      return Text("Item");
+                    },
+                  ),
                 ),
               )
             ],
