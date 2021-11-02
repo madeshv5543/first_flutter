@@ -38,7 +38,8 @@ class DetailsPage extends StatelessWidget {
                                     width: 50,
                                     height: 50,
                                     child: Icon(Icons.keyboard_backspace, color: COLOR_BLACK),
-                                  ))
+                                  )),
+                              BorderIcon(width: 50, height: 50, child: Icon(Icons.favorite_border, color: COLOR_BLACK))
                             ],
                           ),
                         ),
