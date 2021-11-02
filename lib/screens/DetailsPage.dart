@@ -20,29 +20,28 @@ class DetailsPage extends StatelessWidget {
               height: size.height,
               child: Column(
                 children: [
-                 Stack(
-                  children: [
-                    Image.asset(itemData['image']),
-                    Positioned(
-                      top:padding,
-                      width: size.width,
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: (){
-                              Navigator.pop(context)
-                            },
-                            child:BorderIcon(
-                              width: 50,
-                              height: 50,
-                              child: Icon(Icons.keyboard_backspace, color:COLOR_BLACK),
-                            )
-                          )
-                        ],
-                      ),
-                    )
-                  ], 
-                 )
+                  Stack(
+                    children: [
+                      Image.asset(itemData['image']),
+                      Positioned(
+                        top: padding,
+                        width: size.width,
+                        child: Row(
+                          children: [
+                            InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: BorderIcon(
+                                  width: 50,
+                                  height: 50,
+                                  child: Icon(Icons.keyboard_backspace, color: COLOR_BLACK),
+                                ))
+                          ],
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
             )));
