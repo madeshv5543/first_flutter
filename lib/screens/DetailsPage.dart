@@ -84,7 +84,6 @@ class DetailsPage extends StatelessWidget {
                             InformationTitle(content: "${itemData['area']}", name: "Squre Foot"),
                             InformationTitle(content: "${itemData['bathrooms']}", name: 'Bathrooms'),
                             InformationTitle(content: "${itemData['bedrooms']}", name: 'bedrooms'),
-                            InformationTitle(content: "${itemData['garage']}", name: 'Garage'),
                             InformationTitle(content: "${itemData['garage']}", name: 'Garage')
                           ],
                         )),
