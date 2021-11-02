@@ -53,6 +53,7 @@ class DetailsPage extends StatelessWidget {
                   Padding(
                     padding: sidePadding,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           children: [
