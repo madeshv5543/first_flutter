@@ -50,16 +50,19 @@ class DetailsPage extends StatelessWidget {
                     ],
                   ),
                   addVerticalSpace(padding),
-                  Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text("${formatcurrency(itemData['amount'])}", style: themeData.textTheme.headline1),
-                          addVerticalSpace(5),
-                          Text("${itemData['address']}", style: themeData.textTheme.bodyText2)
-                        ],
-                      )
-                    ],
+                  Padding(
+                    padding: sidePadding,
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text("${formatcurrency(itemData['amount'])}", style: themeData.textTheme.headline1),
+                            addVerticalSpace(5),
+                            Text("${itemData['address']}", style: themeData.textTheme.bodyText2)
+                          ],
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
