@@ -38,9 +38,36 @@ class LandingPage extends StatelessWidget {
                 padding: sidePadding,
                 child: Text('San Francisco', style: themeData.textTheme.headline1),
               ),
-              Padding(padding: sidePadding, child: Divider(height: 50, color: Colors.black))
+              Padding(padding: sidePadding, child: Divider(height: 50, color: Colors.black)),
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      "<\$220,000",
+                      "For Sale",
+                      "3-4 Beds",
+                      ">1000 sqft"
+                    ].map((filter) => ChoiceOption(text: filter)).toList(),
+                  ))
             ],
           )),
     );
+  }
+}
+
+class ChoiceOption extends StatelessWidget {
+  final String text;
+
+  const ChoiceOption({Key key, this.text}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
+    return Container(
+        decoration: BoxDecoration(
+          color: COLOR_GREY,
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+        child: Text(text, style: themeData.textTheme.headline5));
   }
 }
