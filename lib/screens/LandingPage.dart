@@ -103,11 +103,15 @@ class RealEstateItem extends StatelessWidget {
           children: [
             Image.asset(itemData['image']),
             Positioned(
+                top: 15,
+                right: 15,
                 child: BorderIcon(
+                    width: 50,
+                    height: 50,
                     child: Icon(
-              Icons.favorite_border,
-              color: COLOR_BLACK,
-            )))
+                      Icons.favorite_border,
+                      color: COLOR_BLACK,
+                    )))
           ],
         )
       ],
