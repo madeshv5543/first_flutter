@@ -104,7 +104,9 @@ class InformationTitle extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double tileSize = size.width * 0.20;
     return Container(
+      margin: EdgeInsets.only(left: 25),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           BorderIcon(width: tileSize, height: tileSize, child: Text(content, style: themeData.textTheme.headline3)),
           addVerticalSpace(15),
