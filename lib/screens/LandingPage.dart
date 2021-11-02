@@ -15,73 +15,75 @@ class LandingPage extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     final double padding = 25.0;
     final sidePadding = EdgeInsets.symmetric(horizontal: padding);
-    return Scaffold(
-      body: Container(
-          width: size.width,
-          height: size.height,
-          child: Stack(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  addVerticalSpace(padding),
-                  Padding(
-                    padding: sidePadding,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BorderIcon(width: 50, height: 50, child: Icon(Icons.menu, color: COLOR_BLACK)),
-                        BorderIcon(width: 50, height: 50, child: Icon(Icons.settings, color: COLOR_BLACK))
-                      ],
-                    ),
-                  ),
-                  addVerticalSpace(padding),
-                  Padding(
-                    padding: sidePadding,
-                    child: Text('City', style: themeData.textTheme.bodyText1),
-                  ),
-                  addVerticalSpace(padding),
-                  Padding(
-                    padding: sidePadding,
-                    child: Text('San Francisco', style: themeData.textTheme.headline1),
-                  ),
-                  Padding(padding: sidePadding, child: Divider(height: padding, color: COLOR_GREY)),
-                  addVerticalSpace(10),
-                  SingleChildScrollView(
-                      physics: BouncingScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          "<\$220,000",
-                          "For Sale",
-                          "3-4 Beds",
-                          ">1000 sqft"
-                        ].map((filter) => ChoiceOption(text: filter)).toList(),
-                      )),
-                  addVerticalSpace(10),
-                  Expanded(
-                    child: Padding(
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+            width: size.width,
+            height: size.height,
+            child: Stack(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    addVerticalSpace(padding),
+                    Padding(
                       padding: sidePadding,
-                      child: ListView.builder(
-                        physics: BouncingScrollPhysics(),
-                        itemCount: RE_DATA.length,
-                        itemBuilder: (context, index) {
-                          return RealEstateItem(itemData: RE_DATA[index]);
-                        },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BorderIcon(width: 50, height: 50, child: Icon(Icons.menu, color: COLOR_BLACK)),
+                          BorderIcon(width: 50, height: 50, child: Icon(Icons.settings, color: COLOR_BLACK))
+                        ],
                       ),
                     ),
-                  )
-                ],
-              ),
-              Positioned(
-                bottom: 20,
-                width: size.width,
-                child: Center(
-                  child: OptionButton(icon: Icons.map_rounded, width: size.width * 0.35, text: "Map View"),
+                    addVerticalSpace(padding),
+                    Padding(
+                      padding: sidePadding,
+                      child: Text('City', style: themeData.textTheme.bodyText1),
+                    ),
+                    addVerticalSpace(padding),
+                    Padding(
+                      padding: sidePadding,
+                      child: Text('San Francisco', style: themeData.textTheme.headline1),
+                    ),
+                    Padding(padding: sidePadding, child: Divider(height: padding, color: COLOR_GREY)),
+                    addVerticalSpace(10),
+                    SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            "<\$220,000",
+                            "For Sale",
+                            "3-4 Beds",
+                            ">1000 sqft"
+                          ].map((filter) => ChoiceOption(text: filter)).toList(),
+                        )),
+                    addVerticalSpace(10),
+                    Expanded(
+                      child: Padding(
+                        padding: sidePadding,
+                        child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          itemCount: RE_DATA.length,
+                          itemBuilder: (context, index) {
+                            return RealEstateItem(itemData: RE_DATA[index]);
+                          },
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          )),
+                Positioned(
+                  bottom: 20,
+                  width: size.width,
+                  child: Center(
+                    child: OptionButton(icon: Icons.map_rounded, width: size.width * 0.35, text: "Map View"),
+                  ),
+                )
+              ],
+            )),
+      ),
     );
   }
 }
