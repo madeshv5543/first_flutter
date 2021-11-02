@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:helloworld/custom/BorderIcon.dart';
 import 'package:helloworld/utils/constants.dart';
 import 'package:helloworld/utils/widget_functions.dart';
+import 'Package:helloworld/utils/custom_functions.dart';
 
 import '../sample_data.dart';
 
@@ -99,19 +100,25 @@ class RealEstateItem extends StatelessWidget {
     return Container(
         child: Column(
       children: [
-        Stack(
+        Stack(children: [
+          ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
+          Positioned(
+              top: 15,
+              right: 15,
+              child: BorderIcon(
+                  width: 50,
+                  height: 50,
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: COLOR_BLACK,
+                  )))
+        ]),
+        addVerticalSpace(15),
+        Row(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
-            Positioned(
-                top: 15,
-                right: 15,
-                child: BorderIcon(
-                    width: 50,
-                    height: 50,
-                    child: Icon(
-                      Icons.favorite_border,
-                      color: COLOR_BLACK,
-                    )))
+            Text("${formatcurrency(itemData['amount'])}", style: themeDate.textTheme.headline1),
+            addHorizontalSpace(10),
+            Text("${itemData['address']}", style: themeDate.textTheme.bodyText2)
           ],
         )
       ],
