@@ -59,7 +59,7 @@ class LandingPage extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: RE_DATA.length,
                     itemBuilder: (context, index) {
-                      return Text("Item");
+                      return RealEstateItem(itemData: RE_DATA[index]);
                     },
                   ),
                 ),
