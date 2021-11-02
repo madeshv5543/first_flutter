@@ -74,9 +74,43 @@ class DetailsPage extends StatelessWidget {
                   Padding(
                     padding: sidePadding,
                     child: Text("House Information", style: themeData.textTheme.headline4),
-                  )
+                  ),
+                  addVerticalSpace(padding),
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          InformationTitle(content: "${itemData['area']}", name: "Squre Foot"),
+                          InformationTitle(content: "${itemData['bathrooms']}", name: 'Bathrooms'),
+                          InformationTitle(content: "${itemData['bedrooms']}", name: 'bedrooms'),
+                          InformationTitle(content: "${itemData['garage']}", name: 'Garage')
+                        ],
+                      ))
                 ],
               ),
             )));
+  }
+}
+
+class InformationTitle extends StatelessWidget {
+  final String content;
+  final String name;
+
+  const InformationTitle({Key key, this.content, this.name}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
+    final Size size = MediaQuery.of(context).size;
+    final double tileSize = size.width * 0.20;
+    return Container(
+      child: Column(
+        children: [
+          BorderIcon(width: tileSize, height: tileSize, child: Text(content, style: themeData.textTheme.headline3)),
+          addVerticalSpace(15),
+          Text(name, style: themeData.textTheme.headline6)
+        ],
+      ),
+    );
   }
 }
