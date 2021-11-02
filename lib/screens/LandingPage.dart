@@ -101,7 +101,7 @@ class RealEstateItem extends StatelessWidget {
       children: [
         Stack(
           children: [
-            Image.asset(itemData['image']),
+            ClipRRect(borderRadius: BorderRadius.circular(25.0), child: Image.asset(itemData['image'])),
             Positioned(
                 top: 15,
                 right: 15,
