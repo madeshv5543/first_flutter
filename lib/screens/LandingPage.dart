@@ -3,6 +3,8 @@ import 'package:helloworld/custom/BorderIcon.dart';
 import 'package:helloworld/utils/constants.dart';
 import 'package:helloworld/utils/widget_functions.dart';
 
+import '../sample_data.dart';
+
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class LandingPage extends StatelessWidget {
                 child: Text('San Francisco', style: themeData.textTheme.headline1),
               ),
               Padding(padding: sidePadding, child: Divider(height: padding, color: COLOR_GREY)),
+              addVerticalSpace(10),
               SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -48,7 +51,16 @@ class LandingPage extends StatelessWidget {
                       "3-4 Beds",
                       ">1000 sqft"
                     ].map((filter) => ChoiceOption(text: filter)).toList(),
-                  ))
+                  )),
+              addVerticalSpace(10),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: RE_DATA.length,
+                  itemBuilder: (context, index) {
+                    return Text("Item");
+                  },
+                ),
+              )
             ],
           )),
     );
