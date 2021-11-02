@@ -108,12 +108,7 @@ class DetailsPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          OptionButton(
-                            width: size.width * 0.35,
-                            icon: Icons.message,
-                          ),
-                          addHorizontalSpace(10),
-                          OptionButton(width: size.width * 0.35, icon: Icons.call)
+                          Text("test")
                         ],
                       ))
                 ],
