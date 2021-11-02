@@ -70,7 +70,10 @@ class DetailsPage extends StatelessWidget {
                     ),
                   ),
                   addVerticalSpace(padding),
-                  Text("House Information", style: themeData.textTheme.headline4)
+                  Padding(
+                    padding: sidePadding,
+                    child: Text("House Information", style: themeData.textTheme.headline4),
+                  )
                 ],
               ),
             )));
