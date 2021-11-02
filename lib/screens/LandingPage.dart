@@ -87,3 +87,30 @@ class ChoiceOption extends StatelessWidget {
         child: Text(text, style: themeData.textTheme.headline5));
   }
 }
+
+class RealEstateItem extends StatelessWidget {
+  final dynamic itemData;
+
+  const RealEstateItem({Key key, @required this.itemData}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeDate = Theme.of(context);
+    return Container(
+        child: Column(
+      children: [
+        Stack(
+          children: [
+            Image.asset(itemData['image']),
+            Positioned(
+                child: BorderIcon(
+                    child: Icon(
+              Icons.favorite_border,
+              color: COLOR_BLACK,
+            )))
+          ],
+        )
+      ],
+    ));
+  }
+}
