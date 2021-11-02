@@ -26,18 +26,21 @@ class DetailsPage extends StatelessWidget {
                       Positioned(
                         top: padding,
                         width: size.width,
-                        child: Row(
-                          children: [
-                            InkWell(
-                                onTap: () {
-                                  Navigator.pop(context);
-                                },
-                                child: BorderIcon(
-                                  width: 50,
-                                  height: 50,
-                                  child: Icon(Icons.keyboard_backspace, color: COLOR_BLACK),
-                                ))
-                          ],
+                        child: Padding(
+                          padding: sidePadding,
+                          child: Row(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: BorderIcon(
+                                    width: 50,
+                                    height: 50,
+                                    child: Icon(Icons.keyboard_backspace, color: COLOR_BLACK),
+                                  ))
+                            ],
+                          ),
                         ),
                       )
                     ],
