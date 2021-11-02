@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/utils/constants.dart';
 import 'Package:helloworld/custom/BorderIcon.dart';
+import 'package:helloworld/utils/widget_functions.dart';
+import 'package:helloworld/utils/custom_functions.dart';
 
 class DetailsPage extends StatelessWidget {
   final dynamic itemData;
@@ -44,6 +46,18 @@ class DetailsPage extends StatelessWidget {
                             ],
                           ),
                         ),
+                      )
+                    ],
+                  ),
+                  addVerticalSpace(padding),
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text("${formatcurrency(itemData['amount'])}", style: themeData.textTheme.headline1),
+                          addVerticalSpace(5),
+                          Text("${itemData['address']}", style: themeData.textTheme.bodyText2)
+                        ],
                       )
                     ],
                   )
